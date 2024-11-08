@@ -10,7 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Projects implements Serializable {
+public class Project implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -22,9 +22,9 @@ public class Projects implements Serializable {
 	private String url;
 	private LocalDate date;
 	
-	public Projects() {}
+	public Project() {}
 	
-	public Projects(Long id, String title, String description, String url, LocalDate date) {
+	public Project(Long id, String title, String description, String url, LocalDate date) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -86,7 +86,7 @@ public class Projects implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Projects other = (Projects) obj;
+		Project other = (Project) obj;
 		return Objects.equals(id, other.id);
 	}
 	

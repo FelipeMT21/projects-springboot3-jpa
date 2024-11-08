@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.felipeportifolio.felipe_portifolio.entities.Projects;
+import com.felipeportifolio.felipe_portifolio.entities.Project;
 
 @RestController
 @RequestMapping(value = "/projects")
-public class ProjectsResources {
+public class ProjectResources {
 
 	@GetMapping
-	public ResponseEntity<Projects> findAll() {
-		Projects p = new Projects(1l, "Weather Project", "TEST TO SE THIS IT WORK", "testestestetstes", LocalDate.now());
+	public ResponseEntity<Project> findAll() {
+		Project p = new Project(1l, "Weather Project", "TEST TO SE THIS IT WORK", "testestestetstes", LocalDate.now());
 		return ResponseEntity.ok().body(p);
 	}
 }
