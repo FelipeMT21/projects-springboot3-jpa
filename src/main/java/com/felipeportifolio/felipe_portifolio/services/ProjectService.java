@@ -27,5 +27,9 @@ public class ProjectService {
 	public Project insert(Project obj) {
 		return repository.save(obj);
 	}
-
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+	
 }
