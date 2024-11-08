@@ -23,5 +23,9 @@ public class ProjectService {
 		Optional<Project> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public Project insert(Project obj) {
+		return repository.save(obj);
+	}
 
 }
