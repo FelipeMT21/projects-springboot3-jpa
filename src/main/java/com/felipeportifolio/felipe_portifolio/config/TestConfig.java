@@ -20,18 +20,18 @@ public class TestConfig implements CommandLineRunner {
 	@Autowired
 	private ProjectRepository projectRepository;
 	
-	@Autowired
-	private CategoryRepository categoryRepository;
+	//@Autowired
+	//private CategoryRepository categoryRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Category cat1 = new Category(null, "Data published");
-		Category cat2 = new Category(null, "Full-Stack");
-		Category cat3 = new Category(null, "FrontEnd");
-		Category cat4 = new Category(null, "BackEnd");
+//		Category cat1 = new Category(null, "Data published");
+//		Category cat2 = new Category(null, "Full-Stack");
+//		Category cat3 = new Category(null, "FrontEnd");
+//		Category cat4 = new Category(null, "BackEnd");
 		
-		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4));
+//		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4));
 		
 		Project p1 = new Project(null, "Weather Project", "TEST TO SE WEATHER PROJECT", "Testwhatherproject", LocalDate.now());
 		Project p2 = new Project(null, "Keeper", "TEST TO SE KEEPER", "TestKeeper", LocalDate.now());
