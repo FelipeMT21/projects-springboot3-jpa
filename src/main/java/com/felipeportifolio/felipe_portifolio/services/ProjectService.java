@@ -32,4 +32,15 @@ public class ProjectService {
 		repository.deleteById(id);
 	}
 	
+	public Project update(Long id, Project obj) {
+		Project entity = repository.getReferenceById(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+
+	private void updateData(Project entity, Project obj) {
+		entity.setTitle(obj.getTitle());
+		entity.setDescription(obj.getDescription());
+		entity.setUrl(obj.getUrl());
+	}
 }
