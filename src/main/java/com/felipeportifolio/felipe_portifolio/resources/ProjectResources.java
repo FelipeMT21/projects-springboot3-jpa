@@ -18,6 +18,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.felipeportifolio.felipe_portifolio.entities.Project;
 import com.felipeportifolio.felipe_portifolio.services.ProjectService;
+import com.felipeportifolio.felipe_portifolio.services.exceptions.ResourceNotFoundException;
 
 @RestController
 @RequestMapping(value = "/projects")
