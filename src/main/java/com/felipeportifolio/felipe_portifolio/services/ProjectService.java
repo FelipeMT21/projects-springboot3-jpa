@@ -11,6 +11,8 @@ import com.felipeportifolio.felipe_portifolio.entities.Project;
 import com.felipeportifolio.felipe_portifolio.repositories.ProjectRepository;
 import com.felipeportifolio.felipe_portifolio.services.exceptions.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class ProjectService {
 
@@ -29,7 +31,7 @@ public class ProjectService {
 	public Project insert(Project obj) {
 		return repository.save(obj);
 	}
-
+	
 	public void delete(Long id) {
 		if(!repository.existsById(id)) {
 			throw new ResourceNotFoundException(id);
@@ -38,9 +40,13 @@ public class ProjectService {
 	}
 
 	public Project update(Long id, Project obj) {
-		Project entity = repository.getReferenceById(id);
-		updateData(entity, obj);
-		return repository.save(entity);
+		try {			
+			Project entity = repository.getReferenceById(id);
+			updateData(entity, obj);
+			return repository.save(entity);
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
 	}
 
 	private void updateData(Project entity, Project obj) {
