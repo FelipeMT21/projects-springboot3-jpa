@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.felipeportifolio.felipe_portifolio.entities.Project;
 import com.felipeportifolio.felipe_portifolio.repositories.ProjectRepository;
+import com.felipeportifolio.felipe_portifolio.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class ProjectService {
@@ -21,7 +22,7 @@ public class ProjectService {
 	
 	public Project findById(Long id) {
 		Optional<Project> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public Project insert(Project obj) {
