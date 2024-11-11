@@ -50,8 +50,8 @@ public class ProjectService {
 	}
 
 	private void updateData(Project entity, Project obj) {
-		entity.setTitle(obj.getTitle());
-		entity.setDescription(obj.getDescription());
-		entity.setUrl(obj.getUrl());
+	    if (obj.getTitle() != null) entity.setTitle(obj.getTitle());
+	    if (obj.getDescription() != null) entity.setDescription(obj.getDescription());
+	    if (obj.getUrl() != null) entity.setUrl(obj.getUrl());
 	}
 }
