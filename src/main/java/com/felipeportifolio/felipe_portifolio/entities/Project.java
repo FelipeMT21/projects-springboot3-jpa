@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,18 +19,24 @@ public class Project implements Serializable {
 	private Long id;
 	
 	private String title;
+
+	@Column(length = 2000)
 	private String description;
-	private String url;
-	private LocalDate date;
-	
+    private String url;
+    private String urlImage;
+    private String urlGit;
+    private LocalDate date;
+
 	public Project() {}
-	
-	public Project(Long id, String title, String description, String url, LocalDate date) {
+
+	public Project(Long id, String title, String description, String url, String urlImage, String urlGit, LocalDate date) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.url = url;
+		this.setUrlImage(urlImage);
+		this.setUrlGit(urlGit);
 		this.date = date;
 	}
 
@@ -64,6 +71,22 @@ public class Project implements Serializable {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	public String getUrlImage() {
+		return urlImage;
+	}
+
+	public void setUrlImage(String urlImage) {
+		this.urlImage = urlImage;
+	}
+
+	public String getUrlGit() {
+		return urlGit;
+	}
+
+	public void setUrlGit(String urlGit) {
+		this.urlGit = urlGit;
+	}
 
 	public LocalDate getDate() {
 		return date;
@@ -89,6 +112,5 @@ public class Project implements Serializable {
 		Project other = (Project) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
+
 }
