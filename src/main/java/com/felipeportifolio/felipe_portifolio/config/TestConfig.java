@@ -17,9 +17,6 @@ public class TestConfig implements CommandLineRunner {
 
 	@Autowired
 	private ProjectRepository projectRepository;
-	
-	//@Autowired
-	//private CategoryRepository categoryRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
