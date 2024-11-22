@@ -9,8 +9,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+
+@Table(name = "project")
 public class Project implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -23,7 +26,9 @@ public class Project implements Serializable {
 	@Column(length = 2000)
 	private String description;
     private String url;
+    @Column(name = "url_image")
     private String urlImage;
+    @Column(name = "url_git")
     private String urlGit;
     private LocalDate date;
 
