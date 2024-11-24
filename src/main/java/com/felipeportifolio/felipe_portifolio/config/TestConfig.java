@@ -35,6 +35,6 @@ public class TestConfig implements CommandLineRunner {
 				"https://github.com/FelipeMT21/drum-kit",
 				LocalDate.now());
 		
-		projectRepository.saveAll(Arrays.asList(p1, p2));
+		// projectRepository.saveAll(Arrays.asList(p1, p2));
 	}
 }
