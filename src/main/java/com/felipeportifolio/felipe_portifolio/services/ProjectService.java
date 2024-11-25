@@ -1,11 +1,14 @@
 package com.felipeportifolio.felipe_portifolio.services;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.util.comparator.Comparators;
 
 import com.felipeportifolio.felipe_portifolio.entities.Project;
 import com.felipeportifolio.felipe_portifolio.repositories.ProjectRepository;
@@ -20,7 +23,8 @@ public class ProjectService {
 	ProjectRepository repository;
 
 	public List<Project> findAll() {
-		return repository.findAll();
+		List<Project> projects = repository.findAll();
+		return projects.stream().sorted(Comparator.comparing(Project::getDate).reversed()).collect(Collectors.toList());
 	}
 
 	public Project findById(Long id) {
