@@ -13,7 +13,7 @@ public class CorsConfig {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("https://felipeportifoliosite-caq7fgfou-felipemt21s-projects.vercel.app");
+				registry.addMapping("/**").allowedOrigins("https://felipeportifoliosite-b4vopar4b-felipemt21s-projects.vercel.app");
 			}
 		};
 	}

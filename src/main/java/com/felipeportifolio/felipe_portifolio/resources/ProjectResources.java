@@ -21,7 +21,7 @@ import com.felipeportifolio.felipe_portifolio.entities.Project;
 import com.felipeportifolio.felipe_portifolio.services.ProjectService;
 import com.felipeportifolio.felipe_portifolio.services.exceptions.ResourceNotFoundException;
 
-@CrossOrigin(origins = "https://felipeportifoliosite-caq7fgfou-felipemt21s-projects.vercel.app") //URL do Angular
+@CrossOrigin(origins = "https://felipeportifoliosite-b4vopar4b-felipemt21s-projects.vercel.app") //URL do Angular
 @RestController
 @RequestMapping(value = "/projects")
 public class ProjectResources {
