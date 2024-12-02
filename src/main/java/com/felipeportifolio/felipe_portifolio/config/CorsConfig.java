@@ -13,7 +13,7 @@ public class CorsConfig {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("http://localhost:4200", "https://felipedeveloper.familiaweb.com.br", "https://felipeportifoliosite-hwmwru2w4-felipemt21s-projects.vercel.app");
+				registry.addMapping("/**").allowedOrigins("http://localhost:4200", "https://felipedev.familiaweb.com.br", "https://felipeportifoliosite-hwmwru2w4-felipemt21s-projects.vercel.app");
 			}
 		};
 	}
